@@ -19,3 +19,7 @@ Auth::routes();
 Route::get('/', function () {
     return redirect()->route('login');
 });
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::resource('member', App\Http\Controllers\MemberController::class, ["names" => "member"])->except(['store', 'update', 'destroy']);
+});
