@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+//会員登録
+Route::prefix('member')->group(function () {
+    //仮登録
+    Route::post('/temporary_registration', [App\Http\Controllers\EmailVerificationController::class, 'temporaryRegistration']);
+    //メール認証
+    Route::post('/email_verification', [App\Http\Controllers\EmailVerificationController::class, 'emailVerification']);
+    //本登録
+    Route::post('/definitive_registration', [App\Http\Controllers\EmailVerificationController::class, 'definitiveRegistration']);
+});
+
+Route::middleware(["cors"])->group(function () {
+
 });

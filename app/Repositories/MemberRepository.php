@@ -48,4 +48,32 @@ class MemberRepository {
         }
     }
 
+    public function find($id)
+    {
+        return $this->member
+            ->newQuery()
+            ->find($id);
+    }
+
+    public function findBy($field, $operator, $value)
+    {
+        return $this->member
+            ->where($field, $operator, $value);
+    }
+
+    public function existsByMail($mail)
+    {
+        return $this->member
+            ->newQuery()
+            ->where(Member::MAIL, $mail)
+            ->exists();
+    }
+
+    public function create($data)
+    {
+        return $this->member
+            ->newQuery()
+            ->create($data);
+    }
+
 }
