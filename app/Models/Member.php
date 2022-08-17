@@ -27,4 +27,5 @@ class Member extends Authenticatable
     const MAIL = 'mail';
     const PASSWORD = 'password';
     const STATUS = 'status';
+    const API_TOKEN = 'api_token';
 }
