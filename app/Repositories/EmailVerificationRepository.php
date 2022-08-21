@@ -43,8 +43,8 @@ class EmailVerificationRepository
     public function canRegistration($token)
     {
         return $this->emailVerification
-            ->where(EmailVerification::token, '=', $token)
-            ->where(EmailVerification::status, '=', EmailVerificationStatus::MAIL_VERIFY)
+            ->where(EmailVerification::TOKEN, '=', $token)
+            ->where(EmailVerification::STATUS, '=', EmailVerificationStatus::MAIL_VERIFY)
             ->exists();
     }
 
