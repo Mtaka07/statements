@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Emuns\EmailVerificationStatus;
+use App\Enums\EmailVerificationStatus;
 use App\Enums\ResponseCode;
 use App\Values\Member;
 use App\Values\EmailVerification;
