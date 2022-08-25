@@ -59,4 +59,17 @@ class MemberController extends Controller
 
         return view('home', compact('members', 'constants'));
     }
+
+    public function member(Request $request)
+    {
+        $apiToken = $request->bearerToken();
+        $member = $this->memberService->findBy(Member::API_TOKEN, "=", $apiToken)->first();
+
+        return response()->json([
+            "result" => true,
+            "status" => ResponseCode::SUCCESS,
+            "message" => "OK",
+            "data" => $member
+        ],ResponseCode::SUCCESS);
+    }
 }

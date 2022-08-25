@@ -76,4 +76,13 @@ class MemberRepository {
             ->create($data);
     }
 
+    public function updateById($id,$data)
+    {
+        return $this->member
+            ->newQuery()
+            ->find($id)
+            ->fill($data)
+            ->save();
+    }
+
 }

@@ -45,4 +45,9 @@ class MemberService {
     {
         return $this->memberRepository->create($data);
     }
+
+    public function updateById($id,$data)
+    {
+        return $this->memberRepository->updateById($id,$data);
+    }
 }
