@@ -23,6 +23,8 @@ window.moment = require('moment')
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('member-component', require('./components/member/MemberComponent.vue').default);
+Vue.component('member-details', require('./components/member/MemberDetailsComponent.vue').default);
+Vue.component('member-edit', require('./components/member/MemberEditComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
