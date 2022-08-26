@@ -22,4 +22,8 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'auth'], function(){
     Route::resource('member', App\Http\Controllers\MemberController::class, ["names" => "member"])->except(['store', 'update', 'destroy']);
+
+    Route::group(['prefix' => 'member'], function () {
+        Route::post('/save', [App\Http\Controllers\MemberController::class, 'save'])->name('member.save');
+    });
 });

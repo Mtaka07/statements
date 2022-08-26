@@ -46,6 +46,11 @@ class MemberService {
         return $this->memberRepository->create($data);
     }
 
+    public function updateOrCreate($attributes, $values)
+    {
+        return $this->memberRepository->updateOrCreate($attributes, $values);
+    }
+
     public function updateById($id,$data)
     {
         return $this->memberRepository->updateById($id,$data);
